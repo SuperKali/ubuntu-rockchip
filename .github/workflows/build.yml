@@ -151,6 +151,8 @@ jobs:
         exclude:
           - board: armsom-sige5
             suite: jammy
+          - board: youteetoo-r1
+            suite: jammy
 
     steps:
       - name: Get more disk space
