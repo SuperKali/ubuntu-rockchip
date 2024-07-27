@@ -128,7 +128,7 @@ jobs:
           # - radxa-cm5-io
           # - radxa-nx5-io
           # - radxa-zero3
-          # - nanopc-t6
+          - nanopc-t6
           # - nanopi-r6c
           # - nanopi-r6s
           # - indiedroid-nova
