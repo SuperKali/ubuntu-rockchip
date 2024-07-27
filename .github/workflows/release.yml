@@ -100,7 +100,7 @@ jobs:
           # - radxa-nx5-io
           # - radxa-zero3
           # - nanopc-t6
-          - nanopi-r6c
+          # - nanopi-r6c
           # - nanopi-r6s
           # - indiedroid-nova
           # - mixtile-blade3
