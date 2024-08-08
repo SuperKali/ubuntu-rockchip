@@ -66,7 +66,6 @@ set +e
 export ARCH=arm64
 export IMAGEFORMAT=none
 export IMAGE_TARGETS=none
-export EXTRA_PPAS="jjriek/rockchip jjriek/rockchip-multimedia"
 
 # Populate the configuration directory for live build
 lb config \
@@ -84,7 +83,7 @@ lb config \
     --mirror-binary "http://ports.ubuntu.com" \
     --parent-mirror-binary "http://ports.ubuntu.com" \
     --keyring-packages ubuntu-keyring \
-    --linux-flavours rockchip
+    --linux-flavours "${KERNEL_FLAVOR}"
 
 # Pin rockchip package archives
 (
@@ -119,11 +118,7 @@ fi
 ) > config/seeded-snaps
 
 # Generic packages to install
-(
-    echo "rockchip-multimedia-config"
-    echo "software-properties-common"
-    echo "linux-firmware"
-) > config/package-lists/my.list.chroot
+echo "software-properties-common" > config/package-lists/my.list.chroot
 
 if [ "${PROJECT}" == "ubuntu" ]; then
     # Specific packages to install for ubuntu desktop
@@ -132,9 +127,6 @@ if [ "${PROJECT}" == "ubuntu" ]; then
         echo "oem-config-gtk"
         echo "ubiquity-frontend-gtk"
         echo "ubiquity-slideshow-ubuntu"
-        echo "gstreamer1.0-rockchip1"
-        echo "chromium-browser"
-        echo "libv4l-rkmpp"
         echo "localechooser-data"
     ) >> config/package-lists/my.list.chroot
 else
