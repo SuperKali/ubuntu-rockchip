@@ -88,10 +88,6 @@ lb config \
 # Pin rockchip package archives
 (
     echo "Package: *"
-    echo "Pin: release o=LP-PPA-jjriek-rockchip"
-    echo "Pin-Priority: 1001"
-    echo ""
-    echo "Package: *"
     echo "Pin: release o=LP-PPA-jjriek-rockchip-multimedia"
     echo "Pin-Priority: 1001"
 ) > config/archives/extra-ppas.pref.chroot
